@@ -1,7 +1,7 @@
 ZendServer-CustomAuth
 =====================
 
-A custom authentication adapter example for Zend Server.
+A custom authentication adapter example for Zend Server 6.
 This zf2 module relies on the Zend Server GUI for operation and shows the basic structure and requirements for creating a new authentication adapter.
 
 Integration
