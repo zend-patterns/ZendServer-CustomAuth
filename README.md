@@ -9,12 +9,15 @@ Integration
 * Unpack the module into the gui/vendor directory
 * Add the 'CustomAuth' module to the end the list of modules in gui/config/application.config.php
 * Disable simple authentication in gui/config/zend_ui_user.ini:
- [authentication]
- simple = false
+
+    [authentication]
+    simple = false
+ 
 * Add the adapter name in gui/config/zend_ui_user.ini:
- [authentication]
- simple = false
- adapter = "CustomAuth\Adapter\AdapterWithGroups"
+
+    [authentication]
+    simple = false
+    adapter = "CustomAuth\Adapter\AdapterWithGroups"
 
 Notes for continued development
 -------------------------------
