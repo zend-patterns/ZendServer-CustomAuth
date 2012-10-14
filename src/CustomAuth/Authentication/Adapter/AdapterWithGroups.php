@@ -23,7 +23,7 @@ class AdapterWithGroups extends Adapter implements IdentityGroupsProvider {
 	public function authenticate() {
 		/// Used to allow developerLimited users read-only access to particular applications
 		/// Groups can also be used to designate an identity's role
-		$this->groups = array('rnd-il');
+		$this->groups = array('administrators');
 		
 		$result = parent::authenticate();
 		$identity = $result->getIdentity();
