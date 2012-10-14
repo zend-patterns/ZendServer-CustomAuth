@@ -26,6 +26,8 @@ If you are going to use the AdapterWithGroups class: open the var/db/gui.db file
 
         INSERT INTO GUI_LDAP_GROUPS (NAME, LDAP_GROUP, LINK_TYPE) VALUES('administrator', 'administrators', 1);
 
+Note that you will have a UI to edit and add groups once inside the UI, you will just need this one group set up to get inside the UI on the first time.
+Should you modify the provided class and derive groups that are not hard-coded, this query will probably have to be replaced or completely dropped.
 
 Notes for continued development
 -------------------------------
