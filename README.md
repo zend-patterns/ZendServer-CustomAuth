@@ -6,7 +6,7 @@ This zf2 module relies on the Zend Server GUI for operation and shows the basic 
 
 Integration
 -----------
-* Unpack the module into the gui/vendor directory
+* Unpack the module into the gui/vendor/CustomAuth directory, note that you may have to rename the directory the zip file unpacks to.
 * Add the 'CustomAuth' module to the end the list of modules in gui/config/application.config.php
 * Disable simple authentication in gui/config/zend_ui_user.ini:
 
@@ -20,7 +20,7 @@ Integration
 
         [authentication]
         simple = false
-        adapter = "CustomAuth\Adapter\AdapterWithGroups"
+        adapter = "CustomAuth\Authentication\Adapter\Adapter"
 
 
 
