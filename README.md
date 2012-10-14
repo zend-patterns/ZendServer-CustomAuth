@@ -22,6 +22,9 @@ Integration
         simple = false
         adapter = "CustomAuth\Authentication\Adapter\Adapter"
 
+If you are going to use the AdapterWithGroups class: open the var/db/gui.db file using an sqlite3 client and run the following query
+
+        INSERT INTO GUI_LDAP_GROUPS (NAME, LDAP_GROUP, LINK_TYPE) VALUES('administrator', 'administrators', 1);
 
 
 Notes for continued development
