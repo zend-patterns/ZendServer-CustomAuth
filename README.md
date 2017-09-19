@@ -21,9 +21,9 @@ with users' roles, usernames and hased passwords.
 ## Integration
 
 1. Create directory called `ZendServerCustomAuthModule` under `<ZS installation path>/gui/3rdparty` directory, and place the contents of this repository inside.
-(`ZendServerCustomAuthModule` is the namespace of the module, therefore the directory should be called the same)
-2. Add the "ZendServerCustomAuthModule" module to the end the list of modules in `<ZS installation path>/gui/3rdparty/modules.config.php`
-3. Open the file `<ZS installation path>/gui/config/zs_ui.ini` for editing, and change two directives under `[authentication]` section
+(`ZendServerCustomAuthModule` is the namespace of the module, therefore this must be the name of the directory)
+2. Add the "ZendServerCustomAuthModule" module to the end of the modules list in `<ZS installation path>/gui/3rdparty/modules.config.php`
+3. Open the file `<ZS installation path>/gui/config/zs_ui.ini` for editing, and modify two directives' values under `[authentication]` section
 
 ```
     [authentication]
@@ -34,13 +34,14 @@ with users' roles, usernames and hased passwords.
 Notes for continued development
 -------------------------------
 
-* This adapter demonstrates authentication by users that are stored in a file, of course this is just an example. **It is wrong and not secure to 
+* This adapter demonstrates authentication by users that are stored in a file. This is just an example and **It is wrong and not secure to 
 use it on production**. 
 
 * The password is hashed using direct md5 without any applied salt, what makes it easier to decrypt the list by potential hackers.
 
-* Since the users list is stored in a file, it cannot be used on a cluster, because every machine has its own disk, and the list may vary from 
-one node to another. The more common way in this case, would be to use one database which is used by all the nodes in the cluster.
+* Since the users list is stored in a file, it cannot be used on a cluster. That is, because every machine has its own disk and the users list may vary from 
+one node to another. More common way is to use a resource that all the nodes in the cluster have access to. For instance it may be MySql database 
+or a shared secure folder.
 
 * `CustomAuth\Authentication\Adapter\Adapter` is a simple adapter that authenticates and returns a result object.
 Note that at the end of the authentication process you must set a role for the identity. Available roles are 'administrator', 'developer' and 'developerLimited'.
