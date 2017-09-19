@@ -1,22 +1,19 @@
 # Zend Server Authentication
 
-Zend Server provides two built-in authentication systems. the first one is called "simple", it provides
-only two users - "administrator" and "developer". Their information is stored in the local database 
-(or on MySql server in case of a cluster). The second method is called "extended", and it allows the 
-system to be connected and authenticated via LDAP. The connection settings can be easily defined through 
-the UI of Zend Server.
+Zend Server provides two built-in authentication methods - "simple" and "extended". The first is the default one, and it provides 
+only two users: "admin" and "developer". The users list is stored in the local SQLite database 
+(or MySql on cluster). The latter, "extended", allows authentication through LDAP. Connection settings can be easily defined through 
+Zend Server UI wizard.
 
-In most of the cases, these two methods are enough. However, there are some edge cases or some systems with special 
-requirements that require more sophisticated authentication systems. For those, we have the possibility to extend 
-the authentication system. Since ZS is built on top of Zend Framework 2, we will use ZF2 module to create our
-own adapters and models
+Usually this is enough, but in edge special cases, or in some systems with special requirements, more sophisticated 
+authentication needed. For this, we have the ability to extend the authentication system by implementing our own auth adapter. 
+Since ZS is built on top of Zend Framework 2, authentication extension is made by creating standard ZF2 module with defined adapter.
 
 ## ZendServer-CustomAuth
 
-The authentication on the server is made through ZF2 auth adapters, which can be extended and manually implemented to fit system requirements. 
-This repository contains an example of authentication adapter, that works with list of users that are stored in a text file. The file contains rows 
-with users' roles, usernames and hased passwords.
-
+This repo contains an example of authentication adapter, that works with list of users that are stored in a text file. The file contains rows 
+with users' roles, usernames and hased passwords. The adapter use dedicated model, which interacts with the data file. So the module has configuration file, 
+few object factories (dependency injection), authentication adapter, model and the data file.
 
 ## Integration
 
