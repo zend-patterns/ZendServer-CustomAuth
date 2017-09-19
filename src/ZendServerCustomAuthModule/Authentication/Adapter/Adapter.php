@@ -10,16 +10,20 @@ use Zend\Authentication\Adapter\AbstractAdapter;
 
 /**
  * 
- * @author yonni.m@zend.com
+ * @author gregory.chris@roguewave.com
  * 
  */
 class Adapter extends AbstractAdapter {
     
+    /**
+     * @var \ZendServerCustomAuthModule\Authentication\Model\File
+     */
     private $model;
     
-    /*
-     * (non-PHPdoc)
-     * @see \Zend\Authentication\Adapter\AdapterInterface::authenticate()
+    /**
+     * authenticate the received identity and credential.
+     * 
+     * @return Result
      */
     public function authenticate() {
         

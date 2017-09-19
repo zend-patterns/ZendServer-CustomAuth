@@ -1,7 +1,9 @@
 <?php
-
+/**
+ * Model that works with the data file.
+ */
+ 
 namespace ZendServerCustomAuthModule\Authentication\Model;
-
 
 class File {
     
@@ -15,6 +17,7 @@ class File {
     private $dataFilePath = false;
     
     /**
+     * hold the users list in the memory
      * @var array
      */
     private $usersCache = null;
